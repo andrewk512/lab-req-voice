@@ -7,7 +7,7 @@ An Ontario lab requisition eForm for [OSCAR EMR](https://oscarcanada.org/) that 
 ## What it does
 
 - **Voice ordering.** Speech becomes a transcript, and each test phrase in it is matched to a box on the requisition. Tests with no box are written into *Other Tests*. Negations ("no PSA") untick a box. A panel shows what was heard, what was ticked, and anything it was unsure of, with an **Undo** button.
-- **Companion auto-fill.** Ticking some boxes ticks their usual partners. For example, Sodium adds Potassium and Creatinine, and Chlamydia adds GC. The rules were mined from 1,802 past submissions of this form. Auto-ticked boxes get a dotted outline on screen, never on paper. The script only unticks boxes it ticked itself, and once you touch a box, it is yours.
+- **Companion auto-fill.** Ticking some boxes ticks their usual partners. For example, Sodium adds Potassium and Creatinine, and Chlamydia adds GC. The rules were mined from past submissions of the form. Auto-ticked boxes get a dotted outline on screen, never on paper. The script only unticks boxes it ticked itself, and once you touch a box, it is yours.
 
 ## How the voice part works
 
@@ -76,15 +76,6 @@ To switch voice off for everyone, set `"enabled": false` in the config, or remov
 | `thresholds.temperature` | `0.05` | Softmax temperature when scoring embedding matches |
 | `thresholds.needleEnabled` | `false` | Also ask Needle 3 (tool calling) about phrases nothing else matched |
 | `thresholds.needleSuggest` | `0.10` | Needle confidence needed to show its answer as a suggestion |
-
-## Running the demo locally
-
-```sh
-node scripts/build-demo.mjs
-python -m http.server 8000 --directory _site
-```
-
-Then open <http://localhost:8000>. Browsers allow the microphone on `localhost` and on HTTPS. The build script makes the eForm standalone: it removes OSCAR-only scripts, fills in a fictional patient, disables submission, and points the voice loader at files sitting next to the page. Pushing to `main` rebuilds and redeploys the GitHub Pages site through `.github/workflows/pages.yml`.
 
 ## Licenses
 
