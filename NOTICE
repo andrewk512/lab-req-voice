@@ -1,0 +1,15 @@
+Lab Req Voice
+
+This repository redistributes the following files from Cactus Compute, unmodified
+except for a ".js" suffix added to each file name. They are licensed under the
+Apache License, Version 2.0; a copy is in LICENSES/Apache-2.0.txt.
+
+  whistle.cact.js   Cactus Whistle speech-to-text model
+                    https://huggingface.co/Cactus-Compute/whistle  (whistle.cact)
+  needle3.cact.js   Cactus Needle 3 model
+                    https://huggingface.co/Cactus-Compute/needle3  (needle3.cact)
+  needle.wasm.js    Cactus Needle engine, WebAssembly build
+                    https://huggingface.co/Cactus-Compute/needle3  (wasm/needle.wasm)
+
+The voice loader embedded in LabReq20212/LabReq20212.html also includes the Cactus
+needle.js engine glue (Apache-2.0, Cactus-Compute/needle3@93e88ede).
